@@ -2,27 +2,35 @@
  * Created by lenovo1 on 2018/5/26.
  */
 ;
+
+// 轮播图插件
+// 参数：bannerSelector:轮播图的容器选择器，必选
+//      animate:slide/fade，轮播的方式，必选
+//      autoPlay:true/false，是否自动轮播，必选
+//      prevBtn:向前翻页的选择器，可选参数
+//      nextBtn:向后翻页的选择器，可选参数
+
+
 +function ($) {
     //添加jquery全局插件
     $.banner=function (bannerSelector,animate, autoPlay, nextBtn, prevBtn) {
         if(!bannerSelector||!animate||!autoPlay) return;
-        // console.log(this);
         //生成轮播
         new Banner(bannerSelector,animate,autoPlay,nextBtn,prevBtn);
     }
     //轮播模块
     function Banner(bannerSelector,animate, autoPlay, nextBtn, prevBtn) {
+        //接收传入参数
         this.bannerList=$(bannerSelector);
         this.bannerItem=$(this.bannerList).children();
-        // console.log(this.bannerItem);
         this.animate=animate;
         this.isAutoPlay=autoPlay;
         this.nowIndex=0;
         this.nextIndex=0;
-        this.flag=true;
+        //判断可选参数是否存在
         if(nextBtn&&prevBtn){
-            this.nextBtn=nextBtn;
-            this.prevBtn=prevBtn;
+            this.nextBtn=$(nextBtn);
+            this.prevBtn=$(prevBtn);
         }
         this.init();
     }
@@ -30,14 +38,6 @@
     Banner.prototype={
         constructor:Banner,
         init:function () {
-            if(this.flag){
-                $(this.bannerItem).each(function (index, item) {
-                    $(item).fadeIn();
-                    $(item).slideDown();
-                    console.log("in");
-                })
-
-            }
             if(this.isAutoPlay){
                 this.autoPlay();
             }
@@ -102,6 +102,7 @@
 
             $(this.bannerItem[this.nowIndex]).css("z-index",1);
             $(this.bannerItem[this.nextIndex]).css("z-index",1);
+
             if(this.animate=="slide"){
                 $(this.bannerItem[this.nextIndex])
                     .stop()

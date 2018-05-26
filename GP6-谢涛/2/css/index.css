@@ -13,12 +13,14 @@ ul{
     padding:0;
 }
 ul li{
+    display: none;
     list-style: none;
     float: left;
     position: absolute;
     overflow: hidden;
 }
 ul li:first-child{
+    display: block;
     z-index: 1;
 }
 ul li img{
