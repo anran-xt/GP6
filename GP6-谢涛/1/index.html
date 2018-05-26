@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="main"></div>
+
+<!--//引入jquery-->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!--//引入加载数据对象-->
+<script src="js/index.js"></script>
+<!--创建callback函数，加载接口数据-->
+<script>
+    function callback(res) {
+        window.data=res;
+        //使用renderPage对象渲染拿到的数据
+        new renderPage(window.data);
+    }
+</script>
+<!--使用jsonp方式请求数据-->
+<script src="http://mce.meilishuo.com/jsonp/get/3?offset=0&frame=1&trace=0&limit=10&endId=0&pid=106888&_=1526528205879&callback=callback"></script>
+</body>
+</html>

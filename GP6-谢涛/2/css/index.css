@@ -1,0 +1,54 @@
+body{
+    margin:0;
+}
+.swiper{
+    width:1100px;
+    margin: auto;
+    /*overflow: hidden;*/
+    position: relative;
+    height:278px;
+}
+ul{
+    margin:0;
+    padding:0;
+}
+ul li{
+    list-style: none;
+    float: left;
+    position: absolute;
+    overflow: hidden;
+}
+ul li:first-child{
+    z-index: 1;
+}
+ul li img{
+    width:1100px;
+}
+.btns{
+    /*position: absolute;*/
+    z-index: 9;
+    /*top:50%;*/
+}
+.btns .leftBtn{
+    position: absolute;
+    width:20px;
+    height:20px;
+    background: url("../img/icon-left-white.png") no-repeat;
+    top:50%;
+    z-index: 9;
+    margin-top: -10px;
+    left:50px;
+    cursor: pointer;
+
+}
+.btns .rightBtn{
+    position: absolute;
+    width:20px;
+    height:20px;
+    background: url("../img/icon-right-white.png") no-repeat;
+    top:50%;
+    margin-top: -10px;
+    z-index: 9;
+    right:50px;
+    cursor: pointer;
+}

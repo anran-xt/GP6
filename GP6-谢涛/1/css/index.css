@@ -1,0 +1,37 @@
+body{
+    margin:0;
+}
+.main{
+    width:1000px;
+    margin: auto;
+}
+.main  .box{
+    width:180px;
+    margin:20px 10px;
+    float: left;
+}
+.main .box .imgBox{
+    width:180px;
+    height:270px;
+}
+.main .box img{
+    width:180px;
+
+}
+.main .box .title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.main .box .btn{
+    width:100px;
+    height:26px;
+    margin: auto;
+    text-align: center;
+    background: #f45;
+    border: none;
+    color:#fff;
+    font-size: 14px;
+    line-height: 26px;
+}
+
