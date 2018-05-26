@@ -37,6 +37,7 @@
     //轮播原型
     Banner.prototype={
         constructor:Banner,
+        //初始化
         init:function () {
             if(this.isAutoPlay){
                 this.autoPlay();
@@ -98,11 +99,11 @@
             $(this.bannerItem).each(function(index,item){
                 $(item).css("z-index",0);
             });
-            console.log(this.nowIndex,this.nextIndex);
 
             $(this.bannerItem[this.nowIndex]).css("z-index",1);
             $(this.bannerItem[this.nextIndex]).css("z-index",1);
 
+            //判断动画方式
             if(this.animate=="slide"){
                 $(this.bannerItem[this.nextIndex])
                     .stop()
@@ -124,7 +125,5 @@
                     .fadeIn("slow");
             }
         }
-
-
     }
 }(jQuery);
